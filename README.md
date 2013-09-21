@@ -10,9 +10,9 @@ the singature will look similar to the following, and will be prepended to the t
   <?php eval(gzinflate(base64_decode(xxx)));?>
 
 How do we kill it? The following is a little Python script I've written that has worked successfully for myself
-(I wrote this to take care of an infection that happened where I work) The Patterns constant defines "/r/n" and 
-the signature as the patterns to check for, this is because the virus left several "/r/n" in it's wake, so you 
-may want to remove that pattern from the script.
+(I wrote this to take care of an infection that happened where I work) The Patterns constant defines "\r\n" and 
+the signature as the patterns to check for, this is because the virus left several "\r\n" in it's wake, so you 
+may want to remove that pattern from the script if you use windows style new lines.
 
 
 
@@ -35,6 +35,7 @@ Steps
     
 NOTE!
 =====
+although previously mentioned it may have been missed but:
 One of the regular expressions matches \r\n lines, this is because it left a trail of these beneath the infection,
 remove this regular expression from the PATTERNS variable if you want to retain these in your files, you may use
 these and they may be important to you.
